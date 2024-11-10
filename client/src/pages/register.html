@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PlanNet</title>
+  <style>
+    /* Global styles */
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      display: flex;
+      /* flex-direction: column; */
+      align-items: center;
+      /* justify-content: center; */
+      color: white;
+    }
+
+    /* Title Section */
+    .title {
+      font-size: 8rem;
+      font-weight: bold;
+      text-align: left;
+      margin-bottom: 200px;
+      color: white;
+      font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    
+    .title span:last-child {
+      color: #f75fea;
+    }
+
+    /* Circle Image Section */
+    .cell img {
+      width: 350px;
+      height: 300px;
+      border-radius: 50%;
+      margin-top: 100px;
+      margin-left: -430px;
+      margin-right: 100px;
+      transform: rotate(0deg);
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .cell img:hover {
+      transform: rotate(360deg);
+    }
+
+    /* Form Section */
+    .form-container {
+      /* width: 100%; */
+      /* max-width: 1200px; */
+      width: 330px;
+      height: 500px;
+      padding: 20px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      text-align: center;
+      margin-left: 120px;
+    }
+
+    .form-title {
+      color: #f75fea;
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+    
+    }
+
+    .form-subtitle {
+      color: gray;
+      font-size: 1rem;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.9rem;
+      margin-left: 20px;
+      color: black;
+      margin-bottom: -15px; /* Space between label and input */
+      text-align: left; /* Align label to the left */
+    }
+
+    .form-input {
+      width: 80%;
+      padding: 10px;
+      border: 1px solid gray;
+      border-radius: 20px;
+      align-self: center;
+    }
+
+    .form-link {
+      font-size: 0.9rem;
+      color: gray;
+      cursor: pointer;
+      text-decoration: none;
+      text-align: left;
+      margin-left: 22px;
+      margin-top: -10px;
+      font-weight: 600;
+    }
+
+    .form-link:hover {
+      color: blue;
+      text-decoration: underline;
+    }
+
+    .form-button {
+      width: 80%;
+      padding: 10px;
+      background-color: #f550e8;
+      border: none;
+      border-radius: 20px;
+      color: black;
+      font-weight: bold;
+      cursor: pointer;
+      align-self: center;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Title Section -->
+    <div class="title">
+      <span>Plan</span><span>Net</span>
+    </div>
+
+    <!-- Circle Image Section -->
+    <div class="cell">
+      <img src="https://github.com/jspHarry/PlanNet-Image/blob/main/Picture1.png?raw=true" alt="Your Image">
+    </div>
+
+    <!-- Form Section -->
+    <div class="form-container">
+      <p class="form-title"><span style="color: black;">Welcome to</span><span style="color: f75fea;"> PlanNet</span></p>
+      <!-- <p class="form-subtitle">Keep all your credentials safe.</p> -->
+      <label for="name" class="form-label">Full Name</label>
+      <input type="name" placeholder="Harry" class="form-input" required>
+      <label for="email" class="form-label">Email Address</label>
+      <input type="email" placeholder="email@example.com" class="form-input" required>
+      <label for="password" class="form-label">Password</label>
+      <input type="password" placeholder="your password" class="form-input" required>
+      <label for="password" class="form-label">Confirm Password</label>
+      <input type="password" placeholder="your password" class="form-input" required>
+
+      <a href="http://localhost:3000/log-in" class="form-link">Already Register</a>
+      
+      <button class="form-button">Register</button>
+    </div>
+  </div>
+
+</body>
+</html>
