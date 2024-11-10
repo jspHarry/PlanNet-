@@ -202,7 +202,7 @@ const AddTask = ({ open, setOpen, task }) => {
                 <Button
                   label='Submit'
                   type='submit'
-                  className='bg-blue-600 px-8 text-sm font-semibold text-white hover:bg-blue-700  sm:w-auto'
+                  className='bg-[#f75fea] px-8 text-sm font-semibold text-black-600  sm:w-auto'
                 />
               )}
 

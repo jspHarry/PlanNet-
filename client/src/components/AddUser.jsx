@@ -6,9 +6,10 @@ import { Dialog } from "@headlessui/react";
 import Textbox from "./Textbox";
 import Loading from "./Loader";
 import Button from "./Button";
-// import { useRegisterMutation } from "../redux/slices/api/authapislice";
+import { useRegisterMutation } from "../redux/slices/api/authapislice";
 // import { useUpdateUserMutation } from "../redux/slices/api/userApiSlice";
-// import { setCredentials } from "../redux/slices/authSlice";
+import { setCredentials } from "../redux/slices/authSlice";
+import { toast } from "sonner";
 
 const AddUser = ({ open, setOpen, userData }) => {
   let defaultValues = userData ?? {};
@@ -21,36 +22,35 @@ const AddUser = ({ open, setOpen, userData }) => {
     handleSubmit,
     formState: { errors },
   } = useForm({ defaultValues });
-  const isLoading = false,
-  isUpdating = false;
+  const isUpdating = false;
 
-//   const dispatch = useDispatch();
-//   const [addNewUser, {isLoading}] = useRegisterMutation();
-//   const [updateUser, {isLoading: isUpdating}]= useUpdateUserMutation();
-//   const handleOnSubmit = async(data) => {
-//   try {
-//     if(userData){
-//       const result = await updateUser(data).unwrap();
-//       toast.success("Profile updated Successfully")
-//       if(userData?._id === user>_id){
-//         dispatch(setCredentials({...result.user}))
-//       }
-//     }else {
-//       await addNewUser({...data, password: data.email}).unwrap();
-//       toast.success("New User added succesfully")
-//     }
+  const dispatch = useDispatch();
+  const [addNewUser, {isLoading}] = useRegisterMutation();
+  // const [updateUser, {isLoading: isUpdating}]= useUpdateUserMutation();
+  const handleOnSubmit = async(data) => {
+  try {
+    if(userData){
+      const result = await updateUser(data).unwrap();
+      toast.success("Profile updated Successfully")
+      if(userData?._id === user>_id){
+        dispatch(setCredentials({...result.user}))
+      }
+    }else {
+      addNewUser({...data, password: data.email}).unwrap();
+      toast.success("New User added succesfully")
+    }
 
-//     setTimeout(()=> {
-//       setOpen(false);
-//     },1500);
-//   } catch(error){
-//     toast.error("Something went wrong")
-//   }
-// };
+    setTimeout(()=> {
+      setOpen(false);
+    },1500);
+  } catch(error){
+    toast.error("Something went wrong")
+  }
+};
 
  
 
-const handleOnSubmit = () => {};
+// const handleOnSubmit = () => {};
   return (
     <>
       <ModalWrapper open={open} setOpen={setOpen}>
@@ -117,7 +117,7 @@ const handleOnSubmit = () => {};
             <div className='py-3 mt-4 sm:flex sm:flex-row-reverse'>
               <Button
                 type='submit'
-                className='bg-blue-600 px-8 text-sm font-semibold text-white hover:bg-blue-700  sm:w-auto'
+                className='bg-[#f75fea] px-8 text-sm font-semibold text-black-600    sm:w-auto'
                 label='Submit'
               />
 

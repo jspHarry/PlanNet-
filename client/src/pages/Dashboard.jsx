@@ -127,7 +127,7 @@ const UserTable = ({ users }) => {
             user?.isActive ? "" : ""
           )}
         >
-          {user?.isActive ? "Active" : "Disabled"}
+          {user?.isActive ? "Active" : "Active"}
         </p>
       </td>
       <td className='py-2 text-sm text-white'>{moment(user?.createdAt).fromNow()}</td>

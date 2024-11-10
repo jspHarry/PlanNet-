@@ -15,14 +15,14 @@ const Users = () => {
   const [openAction, setOpenAction] = useState(false);
   const [selected, setSelected] = useState(null);
 
-  const {data, isLoading,refetch} = useGetTeamListQuery();
+  const {data, isLoading, refetch} = useGetTeamListQuery();
   const[deleteUser] = useDeleteUserMutation()
   const[userAction] = useUserActionMutation()
 
   const userActionHandler = async() => {
     try {
       const result =await userAction({
-        isActive:!selected?.isActive,
+        isActive: !selected?.isActive,
         id: selected?._id,
       });
   
@@ -67,7 +67,7 @@ const Users = () => {
 
   const userStatusClick= (el) => {
     setSelected(el);
-    setOpenAction(true);
+    setOpen(true);
   }
 
   const TableHeader = () => (

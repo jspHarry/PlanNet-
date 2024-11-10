@@ -169,12 +169,12 @@ const Table = ({ tasks }) => {
         onClick={deleteHandler}
       />
 
-      <AddTask
-      open={setOpenEdit}
+      {/* <AddTask
+      open={setOpen}
       setOpen={setOpenEdit}
       task={selected}
       key={new Date().getTime()}
-      />
+      /> */}
     </>
   );
 };
